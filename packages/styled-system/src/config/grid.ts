@@ -24,21 +24,25 @@ const config: Config = {
 /**
  * Types for grid related CSS properties
  */
-export interface GridProps<Theme extends ThemeTypings = ThemeTypings> {
+export interface GridProps {
   /**
    * The CSS `grid-gap` property
    */
-  gridGap?: ResponsiveValue<CSS.Property.GridGap<Length> | Theme["sizes"]>
+  gridGap?: ResponsiveValue<
+    ThemeTypings["sizes"] | CSS.Property.GridGap<Length>
+  >
   /**
    * The CSS `grid-column-gap` property
    */
   gridColumnGap?: ResponsiveValue<
-    CSS.Property.GridColumnGap<Length> | Theme["sizes"]
+    ThemeTypings["sizes"] | CSS.Property.GridColumnGap<Length>
   >
   /**
    * The CSS `grid-row-gap` property
    */
-  gridRowGap?: ResponsiveValue<CSS.Property.GridRowGap<Length> | Theme["sizes"]>
+  gridRowGap?: ResponsiveValue<
+    ThemeTypings["sizes"] | CSS.Property.GridRowGap<Length>
+  >
   /**
    * The CSS `grid-column` property
    */
@@ -63,25 +67,25 @@ export interface GridProps<Theme extends ThemeTypings = ThemeTypings> {
    * The CSS `grid-auto-columns` property
    */
   gridAutoColumns?: ResponsiveValue<
-    Theme["sizes"] | CSS.Property.GridAutoColumns<Length>
+    ThemeTypings["sizes"] | CSS.Property.GridAutoColumns<Length>
   >
   /**
    * The CSS `grid-auto-rows` property
    */
   gridAutoRows?: ResponsiveValue<
-    Theme["sizes"] | CSS.Property.GridAutoRows<Length>
+    ThemeTypings["sizes"] | CSS.Property.GridAutoRows<Length>
   >
   /**
    * The CSS `grid-template-columns` property
    */
   gridTemplateColumns?: ResponsiveValue<
-    Theme["sizes"] | CSS.Property.GridTemplateColumns<Length>
+    ThemeTypings["sizes"] | CSS.Property.GridTemplateColumns<Length>
   >
   /**
    * The CSS `grid-template-rows` property
    */
   gridTemplateRows?: ResponsiveValue<
-    Theme["sizes"] | CSS.Property.GridTemplateRows<Length>
+    ThemeTypings["sizes"] | CSS.Property.GridTemplateRows<Length>
   >
   /**
    * The CSS `grid-template-areas` property
