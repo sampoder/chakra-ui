@@ -1,6 +1,6 @@
 import * as CSS from "csstype"
 import { createParser, Config, system } from "../core"
-import { ResponsiveValue, Length, t } from "../utils"
+import { Token, Length, t } from "../utils"
 
 const config: Config = {
   alignItems: true,
@@ -26,59 +26,59 @@ export interface FlexboxProps {
   /**
    * The CSS `align-items` property
    */
-  alignItems?: ResponsiveValue<CSS.Property.AlignItems>
+  alignItems?: Token<CSS.Property.AlignItems>
   /**
    * The CSS `align-content` property
    */
-  alignContent?: ResponsiveValue<CSS.Property.AlignContent>
+  alignContent?: Token<CSS.Property.AlignContent>
   /**
    * The CSS `justify-items` property
    */
-  justifyItems?: ResponsiveValue<CSS.Property.JustifyItems>
+  justifyItems?: Token<CSS.Property.JustifyItems>
   /**
    * The CSS `justify-content` property
    */
-  justifyContent?: ResponsiveValue<CSS.Property.JustifyContent>
+  justifyContent?: Token<CSS.Property.JustifyContent>
   /**
    * The CSS `flex-wrap` property
    */
-  flexWrap?: ResponsiveValue<CSS.Property.FlexWrap>
+  flexWrap?: Token<CSS.Property.FlexWrap>
   /**
    * The CSS `flex-basis` property
    */
-  flexBasis?: ResponsiveValue<CSS.Property.FlexBasis<Length>>
+  flexBasis?: Token<CSS.Property.FlexBasis<Length>>
   /**
    * The CSS `flex-direction` property
    */
-  flexDirection?: ResponsiveValue<CSS.Property.FlexDirection>
+  flexDirection?: Token<CSS.Property.FlexDirection>
   /**
    * The CSS `flex-direction` property
    */
-  flexDir?: ResponsiveValue<CSS.Property.FlexDirection>
+  flexDir?: Token<CSS.Property.FlexDirection>
   /**
    * The CSS `flex` property
    */
-  flex?: ResponsiveValue<CSS.Property.Flex<Length>>
+  flex?: Token<CSS.Property.Flex<Length>>
   /**
    * The CSS `justify-self` property
    */
-  justifySelf?: ResponsiveValue<CSS.Property.JustifySelf>
+  justifySelf?: Token<CSS.Property.JustifySelf>
   /**
    * The CSS `align-self` property
    */
-  alignSelf?: ResponsiveValue<CSS.Property.AlignSelf>
+  alignSelf?: Token<CSS.Property.AlignSelf>
   /**
    * The CSS `order` property
    */
-  order?: ResponsiveValue<CSS.Property.Order>
+  order?: Token<CSS.Property.Order>
   /**
    * The CSS `flex-grow` property
    */
-  flexGrow?: ResponsiveValue<CSS.Property.FlexGrow>
+  flexGrow?: Token<CSS.Property.FlexGrow>
   /**
    * The CSS `flex-shrink` property
    */
-  flexShrink?: ResponsiveValue<CSS.Property.FlexShrink>
+  flexShrink?: Token<CSS.Property.FlexShrink>
 }
 
 export const flexbox = system(config)

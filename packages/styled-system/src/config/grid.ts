@@ -1,7 +1,6 @@
 import * as CSS from "csstype"
 import { createParser, Config, system } from "../core"
-import { Length, ResponsiveValue, t } from "../utils"
-import { ThemeTypings } from "../theming.types"
+import { Token, t } from "../utils"
 
 const config: Config = {
   gridGap: t.space("gridGap"),
@@ -28,77 +27,66 @@ export interface GridProps {
   /**
    * The CSS `grid-gap` property
    */
-  gridGap?: ResponsiveValue<
-    ThemeTypings["sizes"] | CSS.Property.GridGap<Length>
-  >
+  gridGap?: Token<CSS.Property.GridGap | number, "sizes">
   /**
    * The CSS `grid-column-gap` property
    */
-  gridColumnGap?: ResponsiveValue<
-    ThemeTypings["sizes"] | CSS.Property.GridColumnGap<Length>
-  >
+  gridColumnGap?: Token<CSS.Property.GridColumnGap | number, "sizes">
   /**
    * The CSS `grid-row-gap` property
    */
-  gridRowGap?: ResponsiveValue<
-    ThemeTypings["sizes"] | CSS.Property.GridRowGap<Length>
-  >
+  gridRowGap?: Token<CSS.Property.GridRowGap | number, "sizes">
   /**
    * The CSS `grid-column` property
    */
-  gridColumnStart?: ResponsiveValue<CSS.Property.GridColumnStart>
+  gridColumnStart?: Token<CSS.Property.GridColumnStart>
   /**
    * The CSS `grid-column` property
    */
-  gridColumnEnd?: ResponsiveValue<CSS.Property.GridColumnEnd>
+  gridColumnEnd?: Token<CSS.Property.GridColumnEnd>
   /**
    * The CSS `grid-column` property
    */
-  gridColumn?: ResponsiveValue<CSS.Property.GridColumn>
+  gridColumn?: Token<CSS.Property.GridColumn>
   /**
    * The CSS `grid-row` property
    */
-  gridRow?: ResponsiveValue<CSS.Property.GridRow>
+  gridRow?: Token<CSS.Property.GridRow>
   /**
    * The CSS `grid-auto-flow` property
    */
-  gridAutoFlow?: ResponsiveValue<CSS.Property.GridAutoFlow>
+  gridAutoFlow?: Token<CSS.Property.GridAutoFlow>
   /**
    * The CSS `grid-auto-columns` property
    */
-  gridAutoColumns?: ResponsiveValue<
-    ThemeTypings["sizes"] | CSS.Property.GridAutoColumns<Length>
-  >
+  gridAutoColumns?: Token<CSS.Property.GridAutoColumns | number, "sizes">
   /**
    * The CSS `grid-auto-rows` property
    */
-  gridAutoRows?: ResponsiveValue<
-    ThemeTypings["sizes"] | CSS.Property.GridAutoRows<Length>
-  >
+  gridAutoRows?: Token<CSS.Property.GridAutoRows | number, "sizes">
   /**
    * The CSS `grid-template-columns` property
    */
-  gridTemplateColumns?: ResponsiveValue<
-    ThemeTypings["sizes"] | CSS.Property.GridTemplateColumns<Length>
+  gridTemplateColumns?: Token<
+    CSS.Property.GridTemplateColumns | number,
+    "sizes"
   >
   /**
    * The CSS `grid-template-rows` property
    */
-  gridTemplateRows?: ResponsiveValue<
-    ThemeTypings["sizes"] | CSS.Property.GridTemplateRows<Length>
-  >
+  gridTemplateRows?: Token<CSS.Property.GridTemplateRows | number, "sizes">
   /**
    * The CSS `grid-template-areas` property
    */
-  gridTemplateAreas?: ResponsiveValue<CSS.Property.GridTemplateAreas>
+  gridTemplateAreas?: Token<CSS.Property.GridTemplateAreas>
   /**
    * The CSS `grid-areas` property
    */
-  gridArea?: ResponsiveValue<CSS.Property.GridArea>
+  gridArea?: Token<CSS.Property.GridArea>
   /**
    * The CSS `place-items` property
    */
-  placeItems?: ResponsiveValue<CSS.Property.PlaceItems>
+  placeItems?: Token<CSS.Property.PlaceItems>
 }
 
 export const grid = system(config)
